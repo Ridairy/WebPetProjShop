@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="pt-0">
+    <div class="container col-12" style="">
+        <div class="row justify-content-center">
+            <nav class="navbar navbar-expand-lg navbar-light col-12 shadow-sm mb-3" style="background-color:lightgrey; vertical-align:top">
+                <div class="btn-group">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsedMainMenu" aria-controls="collapsedMainMenu" aria-expanded="false">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsedSecondMenu" aria-controls="collapsedSecondMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapsedSecondMenu" aria-controls="collapsedSecondMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="collapsedMainMenu">
+                    <div class="navbar-nav mr-auto">
+                        <a class="nav-item nav-link" src="Index">Index</a>
+                        <div class="">
+                            <a class="nav-item nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="far fa-id-badge"></i> LogIn</a>
+                            <form class="dropdown-menu ml-2" style="max-width:300px; border-radius:10px">
+                                <div class="ml-1 mr-1">
+                                    <div class="input-group">
+                                        <span class="input-group-prepend input-group-text" id="LoginEmail"><i class="far fa-user"></i></span>
+                                        <input class="form-control" type="email" placeholder="Email..." aria-describedby="LoginEmail" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-prepend input-group-text" id="LoginPassword"><i class="far fa-lock"></i></span>
+                                        <input class="form-control" type="password" placeholder="Password..." aria-describedby="LoginPassword" />
+                                    </div>
+                                    <div class="dropdown-divider"></div>
+                                    <div class="ml-1 mt-2">
+                                        <button class="btn btn-outline-info" type="submit" style="padding-top:5px">Login</button>
+                                        <div class="btn-group-vertical">
+                                            <a href="#" class="badge badge-secondary btn-sm mb-1">Register?</a>
+                                            <a href="#" class="badge badge-secondary btn-sm">Forged password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </form>
+                        </div>
+
+                        <a class="nav-item nav-link" src="#"></a>
+                        <a class="nav-item nav-link" src="#"></a>
+
+                    </div>
+                    <div class="ml-auto">
+                        <button type="button" class="btn" onclick='DoAlert("success")' id="success">Click</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container col-8">
+            <div class="row justify-content-center fixed-top text-center" id="message" style="z-index:100; opacity:0.5;pointer-events:none">
+            </div>
+            
+            @RenderBody()
+
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application </p>
+            </footer>
+        </div>
+     </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/AlertScripts.js")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
